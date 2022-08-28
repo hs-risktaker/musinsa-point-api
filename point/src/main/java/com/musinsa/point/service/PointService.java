@@ -92,6 +92,7 @@ public class PointService {
     }
 
 
+    @Transactional()
     public boolean canclePoint(CancelPointRequestDto param) throws Exception{
         param.setPointType("U");
         Optional<Point> t = pointRepository.findByIdAndPointTypeAndUserId(param.getId(), param.getPointType(), param.getUserId());
